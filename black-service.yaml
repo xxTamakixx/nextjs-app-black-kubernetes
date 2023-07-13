@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: black
+    tier: frontend
+    version: v1
+  name: black-service
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: black
+    tier: frontend
+    version: v1
+status:
+  loadBalancer: {}
