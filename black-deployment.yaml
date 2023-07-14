@@ -24,7 +24,7 @@ spec:
         runAsUser: 1001
         runAsGroup: 1001
       containers:
-        - image: "ghcr.io/xxtamakixx/nextjs-app-black:test"
+        - image: "ghcr.io/xxtamakixx/nextjs-app-black:main"
           name: black-container
           ports:
             - containerPort: 3000
