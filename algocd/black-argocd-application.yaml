@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: test-app
+spec:
+  project: test-project 
+  source:
+    repoURL: https://github.com/xxTamakixx/nextjs-app-black-kubernetes
+    targetRevision: main
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  
+  syncPolicy:
+    automated: {}
